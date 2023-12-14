@@ -1,6 +1,10 @@
 @import "base/global";
 @import "vendor/global";
+@import "components/global";
 
 body {
-  font-size: pxToRem(50px);
+  margin: 0;
+  padding: 0;
+  @include font-helvetica;
+  font-size: var(--base-font-size);
 }

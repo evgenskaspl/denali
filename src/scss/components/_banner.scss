@@ -1,0 +1,86 @@
+.banner {
+  height: 100vh;
+  width: 100%;
+  background: url("../../img/banner.png") no-repeat 50% 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  object-fit: cover;
+
+  .content {
+    width: 80%;
+    text-align: left;
+    color: #fafafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+
+    h1 {
+      margin-bottom: pxToRem(20px);
+      margin-top: pxToRem(200px);
+      text-transform: uppercase;
+
+      @include font-helvetica-neue;
+      font-size: pxToRem(72px);
+      font-weight: var(--bold-weight);
+    }
+
+    .cta-link {
+      position: relative;
+      display: inline-block;
+      margin-top: pxToRem(120px);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--dirty-white);
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+      svg {
+        position: absolute;
+        top: -2px;
+        right: -20px;
+        height: 18px;
+        path {
+          stroke: var(--accent-color);
+        }
+      }
+    }
+  }
+}
+/* Responsive styles */
+@media screen and (max-width: 880px) {
+  .banner {
+    .content {
+      justify-content: center;
+    }
+    .content h1 {
+      font-size: pxToRem(48px);
+      margin-top: 20px;
+    }
+    .content .cta-link {
+      margin-top: 20px;
+    }
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 380px) {
+  .banner {
+    .content {
+      justify-content: center;
+    }
+    .content h1 {
+      font-size: pxToRem(40px);
+      margin-top: 20px;
+    }
+    .content .cta-link {
+      margin-top: 20px;
+    }
+  }
+}
