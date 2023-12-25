@@ -2,6 +2,7 @@
   /* colors */
   --black: #111;
   --soft-black: #181920;
+  --slight-black: #1d1e26;
   --dark-gray: #303240;
   --gray: #acafbf;
   --soft-gray: #585b69;
@@ -18,4 +19,9 @@
   --accent-color: var(--yellow);
   --btn-border-radius: 6px;
   --header-height: 80px;
+
+  /* z-index */
+  --z-index-max: 100;
+  --z-index-middle: 50;
+  --z-index-min: 10;
 }

@@ -18,70 +18,277 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="./img/logo.svg" alt="Logo">
+                <a href="#banner">
+                    <img src="./img/logo.svg" alt="Logo">
+                </a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">PROJECTS</a></li>
-                    <li><a href="#">SERVICES</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#about-us">ABOUT US</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#contact-us">CONTACT US</a></li>
                 </ul>
             </nav>
             <div class="call-button">
-                <button>REQUEST A CALL</button>
+                <a href="#contact-us">
+                    <button>REQUEST A CALL</button>
+                </a>
             </div>
         </div>
     </header>
     <main>
         <section class="banner">
+            <div class="c-section__target" id="banner"></div>
             <div class="content">
                 <h1>Integrity<br>Partnership<br>Commitment</h1>
-                <a href="#" class="cta-link">View Recent Projects
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="#projects" class="cta-link">View Recent Projects
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <g id="arrow-forward-outline 1">
                             <path id="Vector" d="M9.42188 3.9375L14.4844 9L9.42188 14.0625M13.7812 9H3.51562"
                                 stroke="#FFCE00" stroke-width="1.6875" stroke-linecap="round" stroke-linejoin="round" />
                         </g>
-                    </svg></a>
+                    </svg>
+                </a>
             </div>
         </section>
         <section class="about-us">
+            <div class="c-section__target" id="about-us"></div>
             <div class="content">
                 <div class="left">
-                    <h2>About Us</h2>
-                    <div class="description">
-                        <p class="description-text">
-                            Contrary to popular belief, Lorem Ipsum is not simply random text.
-                            It has
-                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one
-                            of the more obscure
-                            Latin words.
-                        </p>
-                        <p>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                            interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
-                            also
-                            reproduced in their exact original form, accompanied by H. Rackham.
-                        </p>
-                        <p>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                            interested.
-                            Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-                            reproduced
-                            in their exact original form, accompanied by H. Rackham.
-                        </p>
-                        <span class="description-info">Our ID Number</span>
-                        <span class="accent-color">C9876543</span>
+                    <div class="wrapper">
+                        <h2>About Us</h2>
+                        <div class="description">
+                            <p class="description-text">
+                                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                It has
+                                roots in a piece of classical Latin literature from 45 BC, making it over 2000 years
+                                old.
+                                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up
+                                one
+                                of the more obscure
+                                Latin words.
+                            </p>
+                            <p>
+                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                                interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
+                                are
+                                also
+                                reproduced in their exact original form, accompanied by H. Rackham.
+                            </p>
+                            <p>
+                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                                interested.
+                                Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+                                reproduced
+                                in their exact original form, accompanied by H. Rackham.
+                            </p>
+                            <span class="description-info">Our ID Number</span>
+                            <span class="accent-color">C9876543</span>
+                        </div>
                     </div>
                 </div>
                 <div class="right">
-                    <img src="./img/about-us.png" alt="About Us Image">
+                    <picture>
+                        <source srcset="./img/about-us768.png" media="(max-width: 1040px)" />
+                        <img src="./img/about-us.png" alt="Baby Sleeping" />
+                    </picture>
                 </div>
             </div>
         </section>
+        <section class="projects">
+            <div class="c-section__target" id="projects"></div>
+            <h2 class="header">Projects</h2>
+            <ul class="cards-wrapper">
+                <li data-fancybox="repair-inside" data-src="./img/inside-1-1.jpg"
+                    data-caption="Sunderland Avenue, Oxford, OX2">
+                    <div class="u-sr js-modal" data-fancybox="repair-inside" data-src="./img/inside-1-2.jpg"
+                        data-caption="Sunderland Avenue, Oxford, OX2"></div>
+                    <figure>
+                        <img src="./img/project1.png" alt="Project 1">
+                        <figcaption>
+                            <span>Repair inside the house
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <g id="arrow-forward-outline 1">
+                                        <path id="Vector"
+                                            d="M9.42188 3.9375L14.4844 9L9.42188 14.0625M13.7812 9H3.51562"
+                                            stroke="#FFCE00" stroke-width="1.6875" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./img/project2.png" alt="Project 1">
+                        <figcaption>
+                            <span>Repair inside the house
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <g id="arrow-forward-outline 1">
+                                        <path id="Vector"
+                                            d="M9.42188 3.9375L14.4844 9L9.42188 14.0625M13.7812 9H3.51562"
+                                            stroke="#FFCE00" stroke-width="1.6875" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="./img/project3.png" alt="Project 1">
+                        <figcaption>
+                            <span>Repair inside the house
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <g id="arrow-forward-outline 1">
+                                        <path id="Vector"
+                                            d="M9.42188 3.9375L14.4844 9L9.42188 14.0625M13.7812 9H3.51562"
+                                            stroke="#FFCE00" stroke-width="1.6875" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+        <div class="section-wrapper">
 
+            <section class="services">
+                <div class="c-section__target" id="services"></div>
+                <h2>Services</h2>
+                <ul class="services-cards">
+                    <li>
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="59" stroke="#ACAFBF" stroke-width="2" />
+                        </svg>
+                        <h3>FixRight Services</h3>
+                        <p>
+                            Efficient repairs & maintenance for a seamless home or business experience, done right the
+                            first
+                            time.
+                        </p>
+                    </li>
+                    <li>
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="59" stroke="#ACAFBF" stroke-width="2" />
+                        </svg>
+                        <h3>RenewPro Solutions</h3>
+                        <p>
+                            Renovations, remodels, and upgrades to enhance spaces, tailored for modern living.
+                        </p>
+                    </li>
+                    <li>
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="59" stroke="#ACAFBF" stroke-width="2" />
+                        </svg>
+                        <h3>SwiftBuild Repairs</h3>
+                        <p>
+                            Quick and reliable construction solutions, ensuring your space is always in top condition.
+                        </p>
+                    </li>
+                    <li>
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="59" stroke="#ACAFBF" stroke-width="2" />
+                        </svg>
+                        <h3>CraftMend Experts</h3>
+                        <p>
+                            Expert craftsmanship for repairs and improvements, restoring homes and businesses with
+                            finesse.
+                        </p>
+                    </li>
+                    <li>
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="59" stroke="#ACAFBF" stroke-width="2" />
+                        </svg>
+                        <h3>ReBuildEase Services</h3>
+                        <p>
+                            Seamless reconstruction and remodeling, making the process hassle-free for clients.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="contact-us">
+                <div class="c-section__target" id="contact-us"></div>
+                <div class="wrapper">
+                    <div class="left">
+                        <h2>Contact us</h2>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="phone" id="phone" name="phone" placeholder="Enter your phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4"
+                                    placeholder="Describe your message"></textarea>
+                            </div>
+
+                            <div class="call-button">
+                                <button type="submit">REQUEST A CALL</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right">
+                        <div class="logo">
+                            <img src="./img/logo-footer.svg" alt="Logo">
+                            <span class="logo-title">building<br>improvement</span>
+                        </div>
+                        <address>
+                            California <br>
+                            3949 Seaview Avenue<br>
+                            San Francisco, CA 94121
+                        </address>
+                        <div class="contacts">
+                            <a href="tel:+1 718-866-5400">+1 718-866-5400</a><br>
+                            <a href="mailto:denali_building_improv@gmail.com" class="email-tab">
+                                denali_building_improv@gmail.com
+                            </a>
+                        </div>
+                        <ul class="social-list">
+                            <li>
+                                <a href="https://www.yelp.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="./img/yelp.svg" alt="Yelp">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="./img/fb.svg" alt="FB">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                                    <img src="./img/insta.svg" alt="I">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="policies">
+                            <a href="./PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+                            <a href="https://www.freepik.com/">www.freepik.com</a>
+                        </div>
+
+                        <div class="authors">
+                            <a href="https://www.upwork.com/freelancers/~01e0f9a5f78882e2bb">Development – Yauheni
+                                Skaskevich</a>
+                            <br>
+                            <a href="https://www.upwork.com/freelancers/~019958c01e1e473371">Design – Pavel Mamchyts</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <div class="menu-container">
@@ -95,15 +302,15 @@
 
         <nav class="menu-items">
             <ul>
-                <li><a class="active" href="#">About us</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="#about-us">About us</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact-us">Contact us</a></li>
             </ul>
         </nav>
 
     </div>
-    <script src="<%= jsPath %>"></script>
+    <script type="module" src="<%= jsPath %>"></script>
 </body>
 
 </html>

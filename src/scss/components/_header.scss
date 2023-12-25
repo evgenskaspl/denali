@@ -2,6 +2,7 @@ $header-width: 80%;
 
 header {
   position: fixed;
+  z-index: var(--z-index-max);
   display: flex;
   width: 100%;
   height: var(--header-height);
@@ -23,10 +24,6 @@ header {
     text-align: center;
 
     ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
       li {
         display: inline-block;
         margin-right: pxToRem(20px);
@@ -49,24 +46,6 @@ header {
         }
       }
     }
-  }
-}
-
-.call-button button {
-  background-color: var(--accent-color);
-  font-weight: var(--bold-weight);
-  color: var(--dark-gray);
-  padding: pxToRem(10px) pxToRem(20px);
-  border: none;
-  border-radius: var(--btn-border-radius);
-  font-size: var(--sm-font-size);
-  cursor: pointer;
-
-  &:hover {
-    background-color: darken-accent(20%);
-  }
-  &:active {
-    background-color: darken-accent(50%);
   }
 }
 

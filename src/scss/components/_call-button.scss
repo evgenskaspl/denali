@@ -1,0 +1,17 @@
+.call-button button {
+  background-color: var(--accent-color);
+  font-weight: var(--bold-weight);
+  color: var(--dark-gray);
+  padding: pxToRem(10px) pxToRem(20px);
+  border: none;
+  border-radius: var(--btn-border-radius);
+  font-size: var(--sm-font-size);
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken-accent(2%);
+  }
+  &:active {
+    background-color: darken-accent(4%);
+  }
+}

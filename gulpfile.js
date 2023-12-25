@@ -6,7 +6,8 @@ const {
     series,
     watch
 } = require('gulp');
-
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('sass'));
@@ -18,7 +19,8 @@ const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 const browsersync = require('browser-sync').create();
 const template = require('gulp-template');
-
+const babel = require('gulp-babel');
+const babelify = require('babelify');
 // gulp config
 const { htmlName, paths, port } = {
     port: 3000,
@@ -58,23 +60,26 @@ function css() {
         .pipe(rename({
             extname: '.min.css'
         }))
-        // .pipe(cssnano())
+        .pipe(cssnano())
         .pipe(dest('./dist/css/'))
         .pipe(browsersync.stream());
 }
 
-function js() {
-    const source = 'src/js/*.js';
-
-    return src(source)
-        .pipe(changed(source))
-        .pipe(concat('bundle.js'))
-        .pipe(uglify())
+function bundleJS() {
+    const sourcePath = 'src/js/main.js';
+    return browserify({
+        entries: sourcePath, // Adjust the entry file based on your project structure
+        debug: true, // Enable source maps for better debugging
+    })
+        .transform(babelify)
+        .bundle()
+        .pipe(source('bundle.js'))
+        // .pipe(uglify())
         .pipe(rename({
             extname: '.min.js'
         }))
-        .pipe(dest('./dist/js/'))
-        .pipe(browsersync.stream());
+        .pipe(dest('dist/js'))
+        .pipe(browsersync.stream())
 }
 
 function img() {
@@ -89,6 +94,17 @@ function copyFonts() {
         .pipe(dest('dist/fonts'));
 }
 
+function copyCssLibs() {
+    return src('src/scss/libs/*')
+        .pipe(imagemin())
+        .pipe(dest('dist/css/libs'));
+}
+
+function copyPDF() {
+    return src('src/PrivacyPolicy.pdf')
+        .pipe(dest('dist'));
+}
+
 function copyFavicon() {
     return src('src/favicon.ico')
         .pipe(imagemin())
@@ -97,7 +113,7 @@ function copyFavicon() {
 
 function watchFiles() {
     watch('src/scss/**/*.scss', css);
-    watch('src/js/*', js);
+    watch('src/js/*', bundleJS);
     watch('src/img/*', img);
     watch(paths.htmlTemplate, html);
 }
@@ -113,7 +129,7 @@ function browserSync() {
 
 // Tasks to define the execution of the functions simultaneously or in series
 
-const tools = [html, copyFonts, copyFavicon, js, css, img]
+const tools = [html, copyFonts, copyPDF, copyFavicon, copyCssLibs, css, bundleJS, img]
 
 exports.watch = parallel(...tools, watchFiles, browserSync);
 exports.default = series(clear, parallel(...tools));
