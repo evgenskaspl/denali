@@ -1,26 +1,26 @@
 
+const gulp = require('gulp');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
+const clean = require('gulp-clean');
+const imagemin = require('gulp-imagemin');
+const browsersync = require('browser-sync').create();
+const template = require('gulp-template');
+const babelify = require('babelify');
+const mozjpeg = require('imagemin-mozjpeg');
+
 const {
     src,
     dest,
     parallel,
     series,
     watch
-} = require('gulp');
-const browserify = require('browserify');
-const source = require('vinyl-source-stream');
-const uglify = require('gulp-uglify');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const cssnano = require('gulp-cssnano');
-const concat = require('gulp-concat');
-const clean = require('gulp-clean');
-const imagemin = require('gulp-imagemin');
-const changed = require('gulp-changed');
-const browsersync = require('browser-sync').create();
-const template = require('gulp-template');
-const babel = require('gulp-babel');
-const babelify = require('babelify');
+} = gulp
+
 // gulp config
 const { htmlName, paths, port } = {
     port: 3000,
@@ -124,12 +124,23 @@ function browserSync() {
             baseDir: paths.baseDir,
         },
         port,
+        https: false
     });
 }
+
+function changeQualityImg() {
+    return src(['src/img/opt/*.jpg'])
+        .pipe(imagemin([
+            mozjpeg({ quality: 8 }), // Adjust quality as needed (0 to 100)
+            // imagemin.optipng({ optimizationLevel: 5 }) // Adjust optimization level as needed (0 to 7)
+        ]))
+        .pipe(dest('dist/img/opt'));
+};
 
 // Tasks to define the execution of the functions simultaneously or in series
 
 const tools = [html, copyFonts, copyPDF, copyFavicon, copyCssLibs, css, bundleJS, img]
 
+exports.img = series(changeQualityImg);
 exports.watch = parallel(...tools, watchFiles, browserSync);
 exports.default = series(clear, parallel(...tools));

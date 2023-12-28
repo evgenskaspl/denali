@@ -4,6 +4,7 @@
   bottom: 20px;
   right: 20px;
   z-index: var(--z-index-middle);
+  user-select: none;
 
   .menu-toggle {
     display: none;
@@ -19,6 +20,12 @@
     padding: 15px 15px;
     border-radius: 50%;
     z-index: var(--z-index-max);
+    user-select: none;
+
+    :active {
+      outline: red;
+      user-select: none;
+    }
   }
 
   .bar {
@@ -28,10 +35,12 @@
     width: 30px;
     margin: 5px 0;
     transition: transform 0.3s;
+    user-select: none;
   }
 
   .menu-toggle:checked + .menu-btn {
     background-color: var(--dark-gray);
+    user-select: none;
   }
 
   .menu-toggle:checked + .menu-btn .bar:nth-child(1) {

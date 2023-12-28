@@ -39,10 +39,12 @@
     "gulp-sass": "^5.0.2",
     "gulp-template": "5",
     "gulp-uglify": "^3.0.2",
+    "imagemin-mozjpeg": "^9.0.0",
     "sass": "1.69.5",
     "vinyl-source-stream": "2.0.0"
   },
   "dependencies": {
-    "@fancyapps/ui": "5.0.30"
+    "@fancyapps/ui": "5.0.30",
+    "reset-css": "5.0.2"
   }
 }

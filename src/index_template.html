@@ -40,6 +40,12 @@
     <main>
         <section class="banner">
             <div class="c-section__target" id="banner"></div>
+            <figure class="c-banner__image">
+                <img loading="lazy" data-srcset="img/banner.png 720w, img/banner.png 1280w, img/banner.png 1920w"
+                    sizes="(max-width: 720px) 720px, (max-width: 1280px) 1280px, 1920px"
+                    srcset="img/banner.png 720w, img/banner.png 1280w, img/banner.png 1920w" data-src="img/banner.png"
+                    src="img/banner.png" alt="banner" class="lazy-image">
+            </figure>
             <div class="content">
                 <h1>Integrity<br>Partnership<br>Commitment</h1>
                 <a href="#projects" class="cta-link">View Recent Projects
@@ -89,10 +95,13 @@
                     </div>
                 </div>
                 <div class="right">
-                    <picture>
-                        <source srcset="./img/about-us768.png" media="(max-width: 1040px)" />
-                        <img src="./img/about-us.png" alt="Baby Sleeping" />
-                    </picture>
+                    <figure class="c-banner__image">
+                        <img loading="lazy"
+                            data-srcset="img/about-us768.png 1040w, img/about-us.png 1280w, img/about-us.png 1920w"
+                            sizes="(max-width: 720px) 720px, (max-width: 1280px) 1280px, 1920px"
+                            srcset="img/about-us768.png 1040w, img/about-us.png 1280w, img/about-us.png 1920w"
+                            data-src="img/about-us.png" src="img/about-us.png" alt="banner" class="lazy-image">
+                    </figure>
                 </div>
             </div>
         </section>
@@ -105,7 +114,7 @@
                     <div class="u-sr js-modal" data-fancybox="repair-inside" data-src="./img/inside-1-2.jpg"
                         data-caption="Sunderland Avenue, Oxford, OX2"></div>
                     <figure>
-                        <img src="./img/project1.png" alt="Project 1">
+                        <img loading="lazy" src="./img/project1.png" alt="Project 1">
                         <figcaption>
                             <span>Repair inside the house
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -122,7 +131,7 @@
                 </li>
                 <li>
                     <figure>
-                        <img src="./img/project2.png" alt="Project 1">
+                        <img loading="lazy" src="./img/project2.png" alt="Project 1">
                         <figcaption>
                             <span>Repair inside the house
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -139,7 +148,7 @@
                 </li>
                 <li>
                     <figure>
-                        <img src="./img/project3.png" alt="Project 1">
+                        <img loading="lazy" src="./img/project3.png" alt="Project 1">
                         <figcaption>
                             <span>Repair inside the house
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -310,6 +319,8 @@
         </nav>
 
     </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <script type="module" src="<%= jsPath %>"></script>
 </body>
 
