@@ -1,0 +1,11 @@
+@mixin lazy-image-block-size($height) {
+  height: $height;
+  width: 100%;
+}
+
+@mixin blured-bg($url) {
+  background: $url no-repeat 50% 50%;
+  background-size: 100% 100%;
+  background-size: cover;
+  filter: blur(8px);
+}

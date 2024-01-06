@@ -1,12 +1,15 @@
 .call-button button {
   background-color: var(--accent-color);
-  font-weight: var(--bold-weight);
-  color: var(--dark-gray);
-  padding: pxToRem(10px) pxToRem(20px);
+  font-weight: 500;
+  font-size: pxToRem(14px);
+  color: var(--black);
+  padding: 10px 25px;
   border: none;
   border-radius: var(--btn-border-radius);
-  font-size: var(--sm-font-size);
+  @include font-helvetica-neue;
   cursor: pointer;
+  height: 42px;
+  width: 181px;
 
   &:hover {
     background-color: darken-accent(2%);

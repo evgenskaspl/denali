@@ -18,14 +18,12 @@
   align-items: center;
   justify-content: center;
   background-size: 100% 100%;
-  // background-size: cover;
-  // object-fit: cover;
+  background-size: cover;
   filter: blur(28px);
 
   .c-banner__image {
     width: 100vw;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     will-change: height;
     position: absolute;
@@ -53,8 +51,8 @@
 
     h1 {
       position: relative;
-      margin-bottom: pxToRem(20px);
-      margin-top: pxToRem(200px);
+      margin-bottom: 20px;
+      margin-top: 200px;
       text-transform: uppercase;
 
       @include font-helvetica-neue;
@@ -65,7 +63,7 @@
     .cta-link {
       position: relative;
       display: inline-block;
-      margin-top: pxToRem(120px);
+      margin-top: 120px;
       text-transform: uppercase;
       text-decoration: none;
       color: var(--dirty-white);
@@ -76,9 +74,14 @@
       &:hover {
         color: var(--accent-color);
       }
+
+      &:active {
+        color: darken-accent(4%);
+      }
+
       svg {
         position: absolute;
-        top: -2px;
+        top: 0;
         right: -20px;
         height: 18px;
         path {

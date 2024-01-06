@@ -1,6 +1,8 @@
 $max-content-width: 400px;
 $min-content-width: 340px;
 
+$common-margin: 25px;
+
 .contact-us {
   display: flex;
   justify-content: center;
@@ -18,7 +20,7 @@ $min-content-width: 340px;
     .left {
       width: 50%;
       h2 {
-        margin-top: 0;
+        margin: 0 0 $common-margin;
         color: var(--dirty-white);
 
         @include font-helvetica-neue;
@@ -34,7 +36,7 @@ $min-content-width: 340px;
         flex-direction: column;
 
         .form-group {
-          margin-bottom: 24px;
+          margin-bottom: $common-margin;
 
           label {
             @include font-roboto;
@@ -91,11 +93,15 @@ $min-content-width: 340px;
       }
 
       address {
-        margin-top: 20px;
+        margin-top: $common-margin;
       }
 
       .contacts {
-        margin-top: 40px;
+        margin-top: $common-margin;
+      }
+
+      .contacts a {
+        font-size: 20px;
       }
 
       address,
@@ -109,11 +115,21 @@ $min-content-width: 340px;
         letter-spacing: 1px;
       }
 
+      .authors a,
+      a {
+        &:hover {
+          color: darken-accent(2%);
+        }
+        &:active {
+          color: darken-accent(4%);
+        }
+      }
+
       .social-list {
         list-style: none;
         padding: 0;
         display: flex;
-        margin-top: 40px;
+        margin-top: 25px;
       }
 
       .social-list li {
@@ -123,9 +139,14 @@ $min-content-width: 340px;
       .policies {
         max-width: $max-content-width;
         min-width: $min-content-width;
-        margin-top: 50px;
+        margin: $common-margin 0;
         display: flex;
         justify-content: space-between;
+      }
+
+      .authors a {
+        font-size: 16px;
+        color: var(--gray);
       }
     }
   }
