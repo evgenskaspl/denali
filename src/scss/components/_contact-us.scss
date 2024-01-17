@@ -3,6 +3,11 @@ $min-content-width: 340px;
 
 $common-margin: 25px;
 
+%disabled-styling {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .contact-us {
   display: flex;
   justify-content: center;
@@ -62,9 +67,18 @@ $common-margin: 25px;
             outline: none;
           }
 
+          input:disabled,
+          textarea:disabled {
+            @extend %disabled-styling;
+          }
+
           textarea {
             resize: vertical;
           }
+        }
+
+        .call-button button:disabled {
+          @extend %disabled-styling;
         }
 
         .call-button button {

@@ -143,4 +143,4 @@ const tools = [html, copyFonts, copyPDF, copyFavicon, copyCssLibs, css, bundleJS
 
 exports.img = series(changeQualityImg);
 exports.watch = parallel(...tools, watchFiles, browserSync);
-exports.default = series(clear, parallel(...tools));
+exports.default = series(clear, parallel(changeQualityImg, ...tools));
