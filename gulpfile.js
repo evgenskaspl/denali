@@ -69,7 +69,6 @@ function bundleJS() {
     const sourcePath = 'src/js/main.js';
     return browserify({
         entries: sourcePath, // Adjust the entry file based on your project structure
-        debug: true, // Enable source maps for better debugging
     })
         .transform(babelify)
         .bundle()
