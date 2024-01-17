@@ -60,7 +60,7 @@ const handleSubmitForm = async (body) => {
             return response.json();
         })
         .then(data => {
-            if (data.success) {
+            if (data?.success === 'true') {
                 content.textContent = 'Thank you, we will get back to you as soon as possible.'
             } else {
                 content.textContent = errorText

@@ -111,6 +111,16 @@ function copyFavicon() {
         .pipe(dest('dist'));
 }
 
+function copyRobots() {
+    return src('src/robots.txt')
+        .pipe(dest('dist'));
+}
+
+function copySitemap() {
+    return src('src/sitemap.xml')
+        .pipe(dest('dist'));
+}
+
 function watchFiles() {
     watch('src/scss/**/*.scss', css);
     watch('src/js/*', bundleJS);
@@ -139,7 +149,7 @@ function changeQualityImg() {
 
 // Tasks to define the execution of the functions simultaneously or in series
 
-const tools = [html, copyFonts, copyPDF, copyFavicon, copyCssLibs, css, bundleJS, img]
+const tools = [html, copyFonts, copyPDF, copyFavicon, copyCssLibs, copyRobots, copySitemap, css, bundleJS, img]
 
 exports.img = series(changeQualityImg);
 exports.watch = parallel(...tools, watchFiles, browserSync);

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /img/
+Allow: /js/
+Allow: /
+
+Sitemap: https://denalimarin.com/sitemap.xml
