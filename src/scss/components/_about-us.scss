@@ -1,0 +1,121 @@
+.about-us {
+  width: 100%;
+  background: var(--light-gray);
+
+  .content {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .left {
+    flex: 1;
+
+    .wrapper {
+      padding: 20px 20px 20px 20%;
+      h2 {
+        margin-bottom: 20px;
+        color: var(--black);
+
+        @include font-helvetica-neue;
+        font-size: pxToRem(30px);
+        font-weight: var(--semi-bold-weigh);
+        text-transform: uppercase;
+      }
+
+      .info-container {
+        margin-top: 20px;
+      }
+
+      .description {
+        flex: 1;
+        padding-right: 30px;
+        overflow: hidden;
+
+        p {
+          color: var(--soft-gray);
+
+          @include font-roboto;
+          font-size: pxToRem(20px);
+          line-height: 32px;
+          letter-spacing: 1px;
+        }
+      }
+
+      span {
+        color: var(--black);
+
+        @include font-helvetica-neue;
+        font-size: pxToRem(24px);
+        font-weight: var(--semi-bold-weigh);
+        letter-spacing: 1px;
+      }
+
+      .accent-color {
+        color: var(--red);
+      }
+    }
+  }
+
+  .right {
+    flex: 1;
+
+    .image-container {
+      @include blured-bg(url("../img/opt/about-us.jpg"));
+
+      figure {
+        @include lazy-image-block-size(calc(100vh - var(--header-height)));
+
+        img {
+          @include lazy-image-block-size(calc(100vh - var(--header-height)));
+          object-fit: cover;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1260px) {
+  .about-us .left {
+    overflow: hidden;
+
+    .wrapper {
+      padding: 20px 10px;
+      .description p {
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1040px) {
+  .about-us {
+    height: 100%;
+    .content {
+      display: block;
+      height: auto;
+
+      .right {
+        figure {
+          max-height: 350px;
+        }
+        img {
+          max-height: 350px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-us {
+    .right {
+      display: none;
+    }
+  }
+}

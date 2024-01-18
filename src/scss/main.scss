@@ -1,6 +1,44 @@
 @import "base/global";
 @import "vendor/global";
+@import "components/global";
+@import "libs/fancybox.css";
 
 body {
-  font-size: pxToRem(50px);
+  margin: 0;
+  padding: 0;
+  @include font-helvetica;
+  font-size: var(--base-font-size);
+  box-sizing: border-box;
+}
+
+html {
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.c-section__target {
+  position: absolute;
+  top: -80px;
+  height: 0;
+  overflow: hidden;
+}
+
+.section-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  section {
+    flex-grow: 1;
+  }
 }

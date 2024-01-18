@@ -1,6 +1,13 @@
-@use 'sass:math';
+@use "sass:math";
+
+$base-font-size: 16px;
+$accent-color: #ffce00;
 
 @function pxToRem($pxValue) {
-  $remValue: math.div($pxValue, 16px) * 1rem;
+  $remValue: math.div($pxValue, $base-font-size) * 1rem;
   @return $remValue;
+}
+
+@function darken-accent($percentage) {
+  @return darken($accent-color, $percentage);
 }

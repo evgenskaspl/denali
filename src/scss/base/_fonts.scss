@@ -1,0 +1,13 @@
+@import url("../fonts/Roboto-Regular.ttf");
+
+@mixin font-roboto() {
+  font-family: "Roboto", sans-serif;
+}
+
+@mixin font-helvetica() {
+  font-family: "Helvetica", sans-serif;
+}
+
+@mixin font-helvetica-neue() {
+  font-family: "Helvetica Neue", sans-serif;
+}

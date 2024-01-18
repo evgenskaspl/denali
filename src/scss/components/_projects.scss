@@ -1,0 +1,127 @@
+.fancybox__footer {
+  display: none;
+}
+
+.projects {
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+
+  .header {
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    height: 0;
+  }
+
+  .cards-wrapper {
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    li {
+      flex: 1;
+      height: 100%;
+      cursor: pointer;
+
+      &:nth-child(1) {
+        @include blured-bg(url("../img/opt/project1.jpg"));
+      }
+      &:nth-child(2) {
+        @include blured-bg(url("../img/opt/project2.jpg"));
+      }
+      &:nth-child(3) {
+        @include blured-bg(url("../img/opt/project3.jpg"));
+      }
+
+      figure {
+        position: relative;
+        @include lazy-image-block-size(calc(100vh - var(--header-height)));
+
+        .u-sr {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip: rect(1px, 1px, 1px, 1px);
+        }
+
+        img {
+          @include lazy-image-block-size(calc(100vh - var(--header-height)));
+          object-fit: cover;
+          display: none;
+        }
+
+        figcaption {
+          position: absolute;
+          bottom: 0;
+          padding: 40px 0;
+          background: rgba(29, 30, 38, 0.89);
+          font-weight: normal;
+          color: var(--dirty-white);
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          width: 100%;
+          margin: 0;
+
+          &:hover {
+            background: #1d1e26;
+          }
+
+          span {
+            position: relative;
+            left: 50px;
+
+            &:hover {
+              color: darken-accent(2%);
+            }
+            &:active {
+              color: darken-accent(4%);
+            }
+
+            svg {
+              position: absolute;
+              top: 0;
+              right: -22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1040px) {
+  .projects {
+    height: 100%;
+
+    .header {
+      background: var(--light-gray);
+      padding: 30px 0;
+      visibility: visible;
+      height: auto;
+      color: var(--black);
+
+      @include font-helvetica-neue;
+      font-size: pxToRem(30px);
+      font-weight: var(--semi-bold-weigh);
+      text-transform: uppercase;
+    }
+
+    .cards-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        flex: 1;
+      }
+
+      figcaption {
+        position: absolute !important;
+        bottom: 0;
+      }
+    }
+  }
+}
